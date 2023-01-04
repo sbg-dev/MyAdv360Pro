@@ -14,7 +14,7 @@ macro_desktop1: macro_desktop1{
 compatible = "zmk,behavior-macro";
 label = "macro_desktop1";
 #binding-cells = <0>;
-bindings = <&kp RCTRL(NUMBER_1()>;
+bindings = <&kp RCTRL(NUMBER_1)>;
 };
 macro_keyboard_layout: macro_keyboard_layout{
 compatible = "zmk,behavior-macro";
