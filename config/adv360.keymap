@@ -39,6 +39,29 @@
             tapping-term-ms = <200>;
             bindings = <&kp TAB>, <&kp LS(TAB)>;
         };
+        td1: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Change Desktop";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RC(RIGHT_ARROW)>, <&kp RC(LEFT_ARROW)>;
+        };
+        td2: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Tap dance desktops";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RC(NUMBER_1)>, <&kp RC(NUMBER_2)>, <&kp RC(NUMBER_3)>;
+        };
+        td3: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Tap dance screenshots";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LS(LG(NUMBER_5))>,
+                       <&kp LS(LG(NUMBER_4))>,
+                       <&kp LS(LG(NUMBER_3))>;
+        };
     };
   };
 
@@ -48,11 +71,11 @@
 
         default_layer {
             bindings = <
- &kp EQUAL     &kp N1    &kp N2    &kp N3     &kp N4    &kp N5                      &none            &mo 3        &kp N6     &kp N7     &kp N8     &kp N9     &kp N0               &kp MINUS
-      &td0      &kp Q     &kp W     &kp E      &kp R     &kp T            &macro_desktop1  &macro_desktop3         &kp Y      &kp U      &kp I      &kp O      &kp P                &kp BSLH
-   &kp ESC      &kp A     &kp S     &kp D      &kp F     &kp G            &macro_desktop2         &kp LALT  &kp LEFT_GUI                         &kp LGUI  &kp RCTRL  &macro_keyboard_layout     &kp H   &kp J      &kp K    &kp L  &kp SEMI    &kp SQT
+ &kp EQUAL     &kp N1    &kp N2    &kp N3     &kp N4    &kp N5                       &td1            &mo 3        &kp N6     &kp N7     &kp N8     &kp N9     &kp N0               &kp MINUS
+      &td0      &kp Q     &kp W     &kp E      &kp R     &kp T                       &td2  &macro_desktop3         &kp Y      &kp U      &kp I      &kp O      &kp P                &kp BSLH
+   &kp ESC      &kp A     &kp S     &kp D      &kp F     &kp G                       &td3         &kp LALT  &kp LEFT_GUI                         &kp LGUI  &kp RCTRL  &macro_keyboard_layout     &kp H   &kp J      &kp K    &kp L  &kp SEMI    &kp SQT
  &kp LSHFT      &kp Z     &kp X     &kp C      &kp V     &kp B                      &none            &none     &kp LCTRL      &none      &none   &kp LALT      &none                   &none     &kp N   &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-     &mo 2  &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT  &kp BSPC                    &kp DEL        &kp ENTER     &kp BSPC   &kp ENTER  &kp SPACE     &kp UP   &kp DOWN                &kp LBKT  &kp RBKT   &mo 2
+     &mo 2  &kp GRAVE  &caps_word  &kp LEFT  &kp RIGHT  &kp BSPC                    &kp DEL        &kp ENTER     &kp BSPC   &kp ENTER  &kp SPACE     &kp UP   &kp DOWN                &kp LBKT  &kp RBKT   &mo 2
             >;
         };
 
