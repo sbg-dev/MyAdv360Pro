@@ -10,10 +10,6 @@ ls -la ${PWD}
 # West Build (left)
 ls -la ${PWD}/config
 
-west init -l config
-west update
-west zephyr-export
-
 west build -s zmk/app -p -d build/left -b adv360_left -S studio-rpc-usb-uart -- -DZMK_CONFIG="${PWD}/config" -DCONFIG_ZMK_STUDIO=y
 # Adv360 Left Kconfig file
 grep -vE '(^#|^$)' build/left/zephyr/.config
