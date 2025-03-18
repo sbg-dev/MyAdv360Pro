@@ -51,7 +51,6 @@
                       <&kp LS(LG(NUMBER_3))>;
       };
     };
-  };
 
   keymap {
     compatible = "zmk,keymap";
